@@ -1,42 +1,514 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-    <title>Sophie's Aesthetics</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Sophie's Aesthetics | Professional Aesthetic Care</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8f5f2;
+            color: #2f2f2f;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ffffff;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e6e1dc;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: #333333;
+            text-decoration: none;
+            margin-left: 25px;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            text-decoration: underline;
+        }
+
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            background: linear-gradient(135deg, #f7efea, #ffffff);
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            margin-bottom: 30px;
+            color: #555555;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #3e3a37;
+            color: white;
+            padding: 13px 25px;
+            text-decoration: none;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .button:hover,
+        .button:focus {
+            background-color: #5a5551;
+        }
+
+        section {
+            padding: 70px 8%;
+        }
+
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .about {
+            background-color: #ffffff;
+        }
+
+        .about-content {
+            max-width: 850px;
+        }
+
+        .about p {
+            margin-bottom: 18px;
+        }
+
+        .services {
+            background-color: #f8f5f2;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .service-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            border: 1px solid #ebe5df;
+        }
+
+        .service-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .approach {
+            background-color: #ffffff;
+        }
+
+        .approach p {
+            max-width: 850px;
+        }
+
+        .contact {
+            background-color: #eee6df;
+            text-align: center;
+        }
+
+        .consultation-form {
+            max-width: 700px;
+            margin: 35px auto 0;
+            text-align: left;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .consultation-form label,
+        .consultation-form legend {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .consultation-form input,
+        .consultation-form select,
+        .consultation-form textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #b8b1ab;
+            border-radius: 5px;
+            font: inherit;
+        }
+
+        .consultation-form input:focus,
+        .consultation-form select:focus,
+        .consultation-form textarea:focus {
+            outline: 3px solid #555555;
+            outline-offset: 2px;
+        }
+
+        .consultation-form fieldset {
+            border: 1px solid #d4cec8;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .consultation-form fieldset label {
+            display: inline-block;
+            margin-right: 25px;
+            font-weight: normal;
+        }
+
+        .consultation-form fieldset input {
+            width: auto;
+            margin-right: 6px;
+        }
+
+        .form-actions {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .secondary-button {
+            padding: 13px 25px;
+            border: 1px solid #3e3a37;
+            background-color: white;
+            color: #2f2f2f;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .secondary-button:hover,
+        .secondary-button:focus {
+            background-color: #f2eeee;
+        }
+
+        footer {
+            background-color: #2f2f2f;
+            color: #ffffff;
+            text-align: center;
+            padding: 25px;
+        }
+
+        @media (max-width: 768px) {
+
+            header {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 5px 8px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 50px 6%;
+            }
+
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+
+            section {
+                padding: 50px 6%;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-actions {
+                flex-direction: column;
+            }
+
+            .form-actions button {
+                width: 100%;
+            }
+
+            .consultation-form fieldset label {
+                display: block;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Sophie's Aesthetics</h1>
+    <header>
+        <div class="brand">Sophie's Aesthetics</div>
 
-    <h2>Professional Aesthetic Care</h2>
+        <nav aria-label="Main navigation">
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#approach">Approach</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
-    <p title="Welcome to Sophie's Aesthetics">
-        Welcome to Sophie's Aesthetics, providing professional and personalised
-        aesthetic treatments with a strong focus on safety, quality and individual care.
-    </p>
 
-    <h2>About Sophie</h2>
+    <main>
 
-    <p>
-        Sophie is a 34-year-old Registered Nurse and experienced healthcare professional.
-        She currently works as a GP Practice Nurse alongside providing aesthetic treatments
-        on a part-time basis.
-    </p>
+        <section class="hero">
+            <div class="hero-content">
 
-    <p>
-        Her clinical background has developed strong skills in patient assessment,
-        communication and safe clinical practice. She brings this healthcare experience
-        into aesthetics, with an emphasis on professional standards, appropriate treatment
-        and achieving natural-looking results.
-    </p>
+                <h1>Professional Aesthetic Care With a Clinical Approach</h1>
 
-    <h2>Approach to Aesthetics</h2>
+                <p>
+                    Personalised aesthetic care delivered by an experienced
+                    Registered Nurse, with a focus on safety, professionalism
+                    and natural-looking results.
+                </p>
 
-    <p>
-        Sophie's approach is centred on individual assessment and providing treatments
-        that are appropriate to each client. Patient safety, informed decision-making
-        and realistic outcomes remain central to her practice.
-    </p>
+                <a href="#contact"
+                   class="button"
+                   title="Book a consultation">
+                    Book a Consultation
+                </a>
+
+            </div>
+        </section>
+
+
+        <section class="about" id="about">
+
+            <div class="about-content">
+
+                <h2>About Sophie</h2>
+
+                <p>
+                    Sophie is a 34-year-old Registered Nurse with extensive
+                    experience working within healthcare. She currently works
+                    as a GP Practice Nurse alongside developing her practice
+                    within medical aesthetics.
+                </p>
+
+                <p>
+                    Her clinical experience has developed strong skills in
+                    patient assessment, communication and safe clinical
+                    practice. These principles form the foundation of her
+                    approach to aesthetics.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <section class="services" id="services">
+
+            <h2>Our Services</h2>
+
+            <div class="service-grid">
+
+                <article class="service-card">
+                    <h3>Consultation</h3>
+
+                    <p>
+                        Individual consultations to understand your goals,
+                        suitability and expectations before treatment.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Aesthetic Treatments</h3>
+
+                    <p>
+                        Carefully selected treatments provided following
+                        professional assessment and consultation.
+                    </p>
+                </article>
+
+                <article class="service-card">
+                    <h3>Aftercare</h3>
+
+                    <p>
+                        Clear guidance and ongoing support following treatment
+                        to promote safe and appropriate recovery.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="approach" id="approach">
+
+            <h2>A Clinical Approach to Aesthetics</h2>
+
+            <p>
+                Every client is treated as an individual. Sophie's approach
+                combines clinical assessment with aesthetic judgement, with
+                patient safety, informed decision-making and realistic
+                expectations central to every consultation.
+            </p>
+
+        </section>
+
+
+        <section class="contact" id="contact">
+
+            <h2>Book a Consultation</h2>
+
+            <p>
+                Complete the form below to make an initial enquiry.
+                Please do not include confidential medical information.
+            </p>
+
+            <form action="#" method="post" class="consultation-form">
+
+                <div class="form-group">
+                    <label for="name">Full name</label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        autocomplete="name"
+                        required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="email">Email address</label>
+
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        autocomplete="email"
+                        required>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="phone">Telephone number</label>
+
+                    <input
+                        type="tel"
+                        id="phone"
+                        name="phone"
+                        autocomplete="tel">
+                </div>
+
+
+                <div class="form-group">
+                    <label for="treatment">Treatment interest</label>
+
+                    <select id="treatment" name="treatment" required>
+                        <option value="">Please select</option>
+                        <option value="consultation">General consultation</option>
+                        <option value="skin">Skin treatment</option>
+                        <option value="aesthetic">Aesthetic treatment</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+
+                <fieldset>
+
+                    <legend>Preferred contact method</legend>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="contact-method"
+                            value="email"
+                            required>
+                        Email
+                    </label>
+
+                    <label>
+                        <input
+                            type="radio"
+                            name="contact-method"
+                            value="phone">
+                        Telephone
+                    </label>
+
+                </fieldset>
+
+
+                <div class="form-group">
+
+                    <label for="message">Message</label>
+
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="5"
+                        maxlength="500"
+                        placeholder="Tell us briefly how we can help. Please do not include medical information."></textarea>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button type="submit" class="button">
+                        Send Enquiry
+                    </button>
+
+                    <button type="reset" class="secondary-button">
+                        Clear Form
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; 2026 Sophie's Aesthetics. All rights reserved.</p>
+    </footer>
 
 </body>
 
